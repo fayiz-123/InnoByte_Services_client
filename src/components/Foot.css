@@ -1,0 +1,36 @@
+/* Footer */
+#foot .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 101px;
+}
+
+#foot .footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#foot .footer p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#foot .footer .social-links {
+    margin-top: 10px;
+}
+
+#foot .footer .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+#foot .footer .social-links a:hover {
+    color: #ffa500;
+    /* Hover color */
+}
