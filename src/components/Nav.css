@@ -26,6 +26,7 @@ body {
 #nav .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 #nav .nav-links li {
@@ -44,7 +45,40 @@ body {
     font-size: 18px;
 }
 
-#nav .nav-links a:hover,  .cart a:hover {
+#nav .nav-links a:hover, .cart a:hover {
     text-decoration: underline;
 }
 
+/* Styles for User Info */
+.user-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.username:hover {
+    text-decoration: underline;
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: rgb(153, 81, 81);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background-color: rgb(207, 80, 80);
+}

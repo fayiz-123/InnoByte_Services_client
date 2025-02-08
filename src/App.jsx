@@ -5,7 +5,9 @@ import Signup from './pages/Signup';
 import Cart from './pages/Cart';
 import ProductDetails from './components/ProductDetails';
 import Checkout from './pages/Checkout';
-import Profile from './pages/Profile';
+import UserProfileUpdate from './pages/userProfileUpdate';
+import OrderHistory from './pages/orderHistory';
+import OrderDetails from './pages/OrderDetails';
 
 
 
@@ -25,9 +27,11 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/cart" element={<Cart/>} />
-      <Route path="/productDetails" element={<ProductDetails/>} />
+      <Route path="/product/:id" element={<ProductDetails />}/>
       <Route path="/checkout" element={<Checkout/>} />
-      <Route path="/profile" element={<Profile/>} />
+      <Route path="/profile" element={<UserProfileUpdate/>} />
+      <Route path="/order-history" element={<OrderHistory/>} />
+      <Route path="/order/:orderId" element={<OrderDetails />} />
 
 
 

@@ -1,85 +1,80 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-#body-main {
-    font-family: Arial, sans-serif;
-    background-color: white;
+#sign {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 820px;
-}
-
-/* Sign Up Container */ 
-#sign .signup-container {
-    background-color: white;
-    padding: 40px;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  #sign .signup-container {
+    background: #fff;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 14px 10px 12px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  #sign h2 {
     text-align: center;
-}
-
-h2 {
-    font-size: 24px;
     margin-bottom: 20px;
-}
-
-#sign .input-group {
+  }
+  
+  #sign .input-group {
     margin-bottom: 15px;
-    text-align: left;
-}
-
-#sign .input-group label {
+  }
+  
+  #sign .input-group label {
+    display: block;
     font-size: 14px;
-    color: #333;
-}
-
-#sign .input-group input {
+    margin-bottom: 5px;
+  }
+  
+  #sign .input-group input {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid white;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-#sign .input-group input:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
-#sign .signup-btn {
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  #sign button.signup-btn {
     width: 100%;
-    padding: 12px;
-    background-color: #007bff;
+    padding: 10px;
+    background-color: #4CAF50;
     color: white;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#sign .signup-btn:hover {
-    background-color: #0056b3;
-}
-
-#sign .login-link {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-#sign .login-link a {
+  }
+  
+  #sign button.signup-btn:hover {
+    background-color: #45a049;
+  }
+  
+  #sign .login-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  #sign .login-link a {
     text-decoration: none;
-    color: #007bff;
-}
-
-#sign .login-link a:hover {
+    color: #007BFF;
+  }
+  
+  #sign .login-link a:hover {
     text-decoration: underline;
-}
+  }
+  
+  #sign .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  #sign h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  

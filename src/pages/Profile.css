@@ -1,140 +1,115 @@
-/* General styling for the page */
-/* General styling for the page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Container for the profile */
-  #profile .profile-container {
-    background-color: white;
+/* General Styling */
+#profile .update-profile-container{
+  padding-left: 20px;
+}
+
+/* Container for the profile update form */
+#profile {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin-top: 50px;
+}
+
+/* Profile update page header */
+#profile h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Styling for form fields */
+#profile form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styling for individual input fields */
+#profile input[type="text"],
+#profile input[type="email"] {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect for input fields */
+#profile input[type="text"]:focus,
+#profile input[type="email"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+  background-color: #fff;
+}
+
+/* Styling for the labels */
+#profile label {
+  font-weight: bold;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Address section styling */
+#profile h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Button styling */
+#profile button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Button hover effect */
+#profile button:hover {
+  background-color: #45a049;
+}
+
+/* Disabled button styling */
+#profile button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Styling for the message display */
+#profile p {
+  text-align: center;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Responsiveness: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  #profile {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
   }
-  
-  /* Heading for the profile */
-  h2 {
-    text-align: center;
-    color: #333;
+
+  #profile h2 {
+    font-size: 22px;
   }
-  
-  /* Form and sections for profile fields */
-  #profile .profile-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #profile .profile-section {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    padding: 8px;
+
+  #profile input[type="text"],
+  #profile input[type="email"],
+  #profile button {
     font-size: 1rem;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
   }
-  
-  input:focus {
-    outline: none;
-    border-color: #4CAF50;
-    background-color: #fff;
-  }
-  
-  /* Save button styling */
-  #profile .save-button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  #profile .save-button:hover {
-    background-color: #45a049;
-  }
-  
-  
-  /* Container for the profile */
-  #profile .profile-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  /* Heading for the profile */
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  /* Form and sections for profile fields */
-  #profile .profile-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #profile .profile-section {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    padding: 8px;
-    font-size: 1rem;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #4CAF50;
-    background-color: #fff;
-  }
-  
-  /* Save button styling */
-  #profile .save-button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  #profile .save-button:hover {
-    background-color: #45a049;
-  }
-  
+}
