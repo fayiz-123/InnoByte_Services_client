@@ -1,25 +1,17 @@
 General Reset
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
 }
 #home-section .card-container{
         display: flex;
-        flex-wrap: wrap; /* Allows wrapping to the next row */
-        gap: 20px; /* Adds space between the cards */
-        justify-content: center; /* Centers the cards horizontally */
-        margin: 0 auto; /* Center the container itself */
-        padding: 10px; /* Optional: Adds padding around the cards */
-    }
-    
-
-
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin: 0 auto; 
+        padding: 10px; 
+        margin-bottom: -110px;
+}
 
 /* Header */
 #home-section .header {

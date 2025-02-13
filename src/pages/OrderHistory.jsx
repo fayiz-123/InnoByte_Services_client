@@ -33,6 +33,8 @@ function OrderHistory() {
 
         if (response.data.success) {
           setOrders(response.data.orderswithItems || []);
+          console.log(response.data.orderswithItems[0].orderItem[0]);
+          
         } else {
           setError(response.data.message || 'No orders found');
         }
@@ -102,8 +104,8 @@ function OrderHistory() {
                     <p>Status: {order.status}</p>
                     <ul>
                       {order.orderItem.map((item) => (
-                        <li key={item.productId._id}>
-                          {item.productId.name} x {item.quantity} - ${item.productId.price * item.quantity}
+                        <li key={item._id}>
+                          {item.productId?.name}x{item.quantity} - ${item.price * item.quantity}
                         </li>
                       ))}
                     </ul>
@@ -128,3 +130,4 @@ function OrderHistory() {
 }
 
 export default OrderHistory;
+ 

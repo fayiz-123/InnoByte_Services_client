@@ -1,0 +1,40 @@
+.admin-dashboard-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  .admin-actions {
+    margin-top: 30px;
+  }
+  
+  .admin-actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .admin-actions a:hover {
+    background-color: #45a049;
+  }
+  
+  .admin-actions button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .admin-actions button:hover {
+    background-color: #e53935;
+  }
+  

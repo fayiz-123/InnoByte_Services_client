@@ -62,8 +62,8 @@ function OrderDetails() {
             {order.orderAlongItems && order.orderAlongItems.map((item, index) => (
               <div key={index} className="order-item">
                 <img
-                  src={item.productId?.image || 'default.jpg'}
-                  alt={item.productId?.name || 'Product'}
+                  src={`http://localhost:3000/uploads/${item.productId?.image}`}
+                  alt={`http://localhost:3000/uploads/${item.productId?.name}`}
                   className="order-item-image"
                 />
                 <div className="order-item-details">

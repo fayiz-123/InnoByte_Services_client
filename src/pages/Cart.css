@@ -15,7 +15,10 @@ body {
 #cart {
     padding: 30px;
     background-color: #fff;
-    margin: 20px auto;
+    margin-top: 20px ;
+    margin-left: 170px;
+    margin-right: 10px;
+    margin-bottom: 290px;
     max-width: 1200px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -55,9 +58,8 @@ body {
 }
 
 #cart .cart-item img {
-    width: 100%;
+    width: 60%;
     height: 200px;
-    object-fit: cover;
     border-bottom: 2px solid #ddd;
 }
 

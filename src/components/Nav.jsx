@@ -29,7 +29,7 @@ function Nav() {
     fetchUserName();
   }, []);
 
-  // 🚀 Logout function
+  // Logout function
   const handleLogout = () => {
     localStorage.removeItem("authToken"); // Remove token
     setUserName(null);  // Reset username state
@@ -39,30 +39,32 @@ function Nav() {
   return (
     <div id="nav">
       <nav className="navbar">
-        <div className="logo">ShopEasy</div>
+        <div className="logo">ShopEazY</div>
         <ul className="nav-links">
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">Shop</a>
+            <Link to="/profile">Profile</Link>  {/* Profile button replaces Shop */}
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="/order-history">Orders</Link>
           </li>
           <li>
-            {userName ? (
-              <div className="user-container">
-                <Link to="/profile" className="username">{userName}</Link>
-                <button onClick={handleLogout} className="logout-btn">Logout</button>
-              </div>
-            ) : (
-              <Link to="/login">Login</Link>
-            )}
+            <div className="cart">
+              <Link to="/cart">🛒 Cart</Link>
+            </div>
           </li>
         </ul>
-        <div className="cart">
-          <Link to="/cart">🛒 Cart</Link>
+        <div className="right-section">
+          {userName ? (
+            <div className="user-section">
+              <span className="username">{userName}</span>
+              <button onClick={handleLogout} className="logout-btn">Logout</button>
+            </div>
+          ) : (
+            <Link to="/login" className="login-btn">Login</Link>
+          )}
         </div>
       </nav>
     </div>

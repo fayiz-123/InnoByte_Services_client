@@ -10,7 +10,8 @@ const ProductCard = ({ product }) => {
       <section className="products">
         <div className="product-list">
           <div className="product">
-            <img src={`http://localhost:3000/${product.image}`} alt="Product" />
+            {/* Update the image URL */}
+            <img src={`http://localhost:3000/uploads/${product.image}`} alt={product.name} />
             <h3>{product.name}</h3>
             <h3>{product.description}</h3>
             <p>Price: {product.price}</p>

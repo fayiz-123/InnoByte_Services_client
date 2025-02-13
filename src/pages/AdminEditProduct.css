@@ -1,0 +1,86 @@
+#main {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  #main h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  #main .form-group {
+    margin-bottom: 15px;
+  }
+  
+  #main .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  #main .form-group input,
+  #main .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #main .form-group textarea {
+    height: 120px;
+    resize: vertical;
+  }
+  
+  #main .form-group input[type="file"] {
+    padding: 5px;
+  }
+  
+  #main button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #main button:hover {
+    background-color: #45a049;
+  }
+  
+  #main .error-message,
+  #main .success-message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  #main .error-message {
+    background-color: #f44336;
+  }
+  
+  #main .success-message {
+    background-color: #4CAF50;
+  }
+  
+  #main .form-group input,
+  #main .form-group textarea,
+  #main button {
+    font-size: 16px;
+  }
+  

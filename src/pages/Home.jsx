@@ -32,7 +32,7 @@ function Home() {
             <div id="home-section">
                 <main className="main-content">
                     <section className="hero">
-                        <h2>Welcome to ShopEase!</h2>
+                        <h2>Welcome to ShopEasY!</h2>
                         <p>Your favorite online store for amazing deals.</p>
                     </section>
 

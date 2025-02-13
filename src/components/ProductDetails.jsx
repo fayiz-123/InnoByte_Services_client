@@ -75,7 +75,7 @@ const ProductDetails = () => {
           <div className="product-container">
             {/* Product Image Section */}
             <div className="product-image">
-              <img src={`http://localhost:3000/${product.image}`} alt={product.name} />
+              <img src={`http://localhost:3000/uploads/${product.image}`} alt={product.name} />
             </div>
 
             {/* Product Details Section */}
@@ -83,7 +83,6 @@ const ProductDetails = () => {
               <h1>{product.name}</h1>
               <p>{product.description}</p>
               <h3 className="price">Price: ${product.price}</h3>
-              <h4 className="stock">Stock: {product.stock}</h4>
 
               {/* Add to Cart Button */}
               <button className="add-to-cart" onClick={handleAddToCart}>

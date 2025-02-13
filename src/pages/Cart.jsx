@@ -125,8 +125,8 @@ function Cart() {
             {cartItems.map((item, index) => (
               <div className="cart-item" key={item.productId?._id || index}>
                 <img
-                  src={item.productId?.image || 'default.jpg'}
-                  alt={item.productId?.name || 'Product'}
+                  src={`http://localhost:3000/uploads/${item.productId?.image}`} 
+                  alt={`http://localhost:3000/uploads/${item.productId?.name}`}
                 />
                 <div className="item-details">
                   <h3>{item.productId?.name || 'Unknown Product'}</h3>
