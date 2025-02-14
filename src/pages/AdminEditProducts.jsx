@@ -16,7 +16,6 @@ const AdminEditProduct = () => {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  // Fetch product details by ID on component mount
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -25,13 +24,12 @@ const AdminEditProduct = () => {
         });
         console.log(response.data);
         
-        // Populate form with current product details, including stock
         setFormData({
           name: response.data.findProduct.name,
           description: response.data.findProduct.description,
           price: response.data.findProduct.price,
-          stock: response.data.findProduct.stock, // Set the stock value from the response
-          image: null, // Do not preload image, handle separately
+          stock: response.data.findProduct.stock, 
+          image: null,
         });
       } catch (error) {
         setError("Error fetching product details.");
@@ -40,9 +38,9 @@ const AdminEditProduct = () => {
     };
 
     fetchProduct();
-  }, [id]); // Only fetch the product when the id changes
+  }, [id]); 
 
-  // Handle form input changes
+  
   const handleChange = (e) => {
     if (e.target.name === "image") {
       setFormData({ ...formData, [e.target.name]: e.target.files[0] });
@@ -51,13 +49,11 @@ const AdminEditProduct = () => {
     }
   };
 
-  // Handle form submission for updating the product
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
 
-    // Validation: Ensure all fields are filled
     if (!formData.name || !formData.description || !formData.price || !formData.stock) {
       setError("All fields are required.");
       return;
@@ -67,27 +63,26 @@ const AdminEditProduct = () => {
     productFormData.append("name", formData.name);
     productFormData.append("description", formData.description);
     productFormData.append("price", formData.price);
-    productFormData.append("stock", formData.stock); // Append stock data
+    productFormData.append("stock", formData.stock); 
     if (formData.image) {
-      productFormData.append("image", formData.image); // Only append image if it's provided
+      productFormData.append("image", formData.image); 
     }
 
     try {
-      // Send PUT request to the backend to update the product
       const response = await axios.put(
         `http://localhost:3000/products/updateProduct/${id}`,
         productFormData,
         {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("adminToken")}`,
-            "Content-Type": "multipart/form-data", // Required for file uploads
+            "Content-Type": "multipart/form-data", 
           },
         }
       );
 
       if (response.data.success) {
         setSuccess("Product updated successfully!");
-        navigate("/adminProducts"); // Redirect to product list
+        navigate("/adminProducts");
       } else {
         setError(response.data.message || "Failed to update product.");
       }
@@ -98,7 +93,6 @@ const AdminEditProduct = () => {
   };
 
   return (
-    // Wrap everything in the main div to apply the styles
     <div id="main">
       <h2>Update Product</h2>
       {error && <p className="error-message">{error}</p>}
@@ -140,7 +134,6 @@ const AdminEditProduct = () => {
           />
         </div>
 
-        {/* Added Stock Input */}
         <div className="form-group">
           <label>Stock</label>
           <input

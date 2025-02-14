@@ -16,20 +16,18 @@ function Checkout() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [orderPlaced, setOrderPlaced] = useState(false);  // New state for animation
+  const [orderPlaced, setOrderPlaced] = useState(false);  
   const navigate = useNavigate();
 
-  // Get Token from LocalStorage
   const getAuthToken = () => {
     const token = localStorage.getItem("authToken");
-    console.log("Auth Token:", token); // Debugging
+    console.log("Auth Token:", token); 
     return token;
   };
 
-  // Fetch Cart Data from Backend
   useEffect(() => {
     const fetchCart = async () => {
-      const userToken = getAuthToken(); // Get token inside useEffect
+      const userToken = getAuthToken(); 
       if (!userToken) {
         setError('Please log in to view your cart');
         setLoading(false);
@@ -43,11 +41,10 @@ function Checkout() {
 
         if (response.data.success) {
           const cartItems = response.data.cart.products || [];
-          const userAddress = response.data.address || {};  // Expecting address to be an object
+          const userAddress = response.data.address || {};  
 
-          console.log("Fetched Shipping Address:", userAddress);  // Debugging log
-
-          setShippingAddress(userAddress);  // Update the state with the shipping address
+          console.log("Fetched Shipping Address:", userAddress); 
+          setShippingAddress(userAddress);  
 
           setOrderSummary((prevSummary) => {
             const subtotal = cartItems.reduce(
@@ -73,14 +70,13 @@ function Checkout() {
     };
 
     fetchCart();
-  }, []);  // No dependency on `userToken` here since it doesn't change within the lifecycle of this component
+  }, []);  
 
-  // Handle changes in address fields
   const handleAddressChange = (e) => {
     const { name, value } = e.target;
     setShippingAddress((prevAddress) => ({
       ...prevAddress,
-      [name]: value, // Update the specific field (e.g., street, city)
+      [name]: value, 
     }));
   };
 
@@ -106,10 +102,10 @@ function Checkout() {
       console.log("Order Response:", response.data);
 
       if (response.data.success) {
-        setOrderPlaced(true); // Trigger the animation
+        setOrderPlaced(true); 
         setTimeout(() => {
           navigate('/order-history');
-        }, 3000); // After 3 seconds, navigate to the order history page
+        }, 3000); 
       } else {
         alert(response.data.message);
       }
@@ -139,7 +135,7 @@ function Checkout() {
                   type="text"
                   name="street"
                   placeholder="Enter your street address"
-                  value={shippingAddress.street || ''} // Display street if available
+                  value={shippingAddress.street || ''} 
                   onChange={handleAddressChange}
                   required
                 />
@@ -147,7 +143,7 @@ function Checkout() {
                   type="text"
                   name="city"
                   placeholder="Enter your city"
-                  value={shippingAddress.city || ''} // Display city if available
+                  value={shippingAddress.city || ''} 
                   onChange={handleAddressChange}
                   required
                 />
@@ -155,7 +151,7 @@ function Checkout() {
                   type="text"
                   name="state"
                   placeholder="Enter your state"
-                  value={shippingAddress.state || ''} // Display state if available
+                  value={shippingAddress.state || ''} 
                   onChange={handleAddressChange}
                   required
                 />
@@ -163,7 +159,7 @@ function Checkout() {
                   type="text"
                   name="postalCode"
                   placeholder="Enter your postal code"
-                  value={shippingAddress.postalCode || ''} // Display postal code if available
+                  value={shippingAddress.postalCode || ''} 
                   onChange={handleAddressChange}
                   required
                 />
@@ -171,7 +167,7 @@ function Checkout() {
                   type="text"
                   name="country"
                   placeholder="Enter your country"
-                  value={shippingAddress.country || ''} // Display country if available
+                  value={shippingAddress.country || ''} 
                   onChange={handleAddressChange}
                   required
                 />
@@ -207,7 +203,6 @@ function Checkout() {
             </form>
           )}
 
-          {/* Order Completion Animation */}
           <div className={`order-complete-message ${orderPlaced ? 'show' : ''}`}>
             Order placed successfully!
           </div>

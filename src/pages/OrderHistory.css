@@ -1,7 +1,8 @@
 #order-history .order-history-container {
     width: 80%;
     max-width: 900px;
-    margin: 0 auto;
+    margin-bottom: 390px;
+    margin-left: 300px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;

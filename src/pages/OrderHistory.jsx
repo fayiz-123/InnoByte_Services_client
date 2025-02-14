@@ -49,7 +49,6 @@ function OrderHistory() {
     fetchOrders();
   }, []);
 
-  // Cancel Order Handler
   async function cancelOrder(orderId) {
     const userToken = getAuthToken();
     if (!userToken) {
@@ -65,7 +64,6 @@ function OrderHistory() {
       );
 
       if (response.data.success) {
-        // Update the status of the order to "Cancelled" instead of removing it from the list
         setOrders((prevOrders) =>
           prevOrders.map((order) =>
             order._id === orderId ? { ...order, status: 'Cancelled' } : order
@@ -105,13 +103,12 @@ function OrderHistory() {
                     <ul>
                       {order.orderItem.map((item) => (
                         <li key={item._id}>
-                          {item.productId?.name}x{item.quantity} - ${item.price * item.quantity}
+                          {item.productId?.name}   x{item.quantity} - ${item.price * item.quantity}
                         </li>
                       ))}
                     </ul>
                     <p><strong>Total: ${order.totalamount ? order.totalamount.toFixed(2) : '0.00'}</strong></p>
                     
-                    {/* Conditionally render the cancel button */}
                     {order.status === 'Pending' && (
                       <button onClick={() => cancelOrder(order._id)}>Cancel Order</button>
                     )}

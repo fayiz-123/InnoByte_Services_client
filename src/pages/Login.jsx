@@ -22,7 +22,7 @@ function Login() {
       if (response.data.success) {
         localStorage.setItem("authToken", response.data.token);
         localStorage.setItem('userId', response.data.userId);
-        localStorage.setItem("userName", response.data.username); // Store user's name
+        localStorage.setItem("userName", response.data.username); 
         setMessage(response.data.message);
         navigate("/");
       } else {

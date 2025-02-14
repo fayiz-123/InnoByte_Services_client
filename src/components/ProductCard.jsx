@@ -9,13 +9,10 @@ const ProductCard = ({ product }) => {
     <div id='card'>
       <section className="products">
         <div className="product-list">
-          <div className="product">
-            {/* Update the image URL */}
+          <div className="product">       
             <img src={`http://localhost:3000/uploads/${product.image}`} alt={product.name} />
             <h3>{product.name}</h3>
-            <h3>{product.description}</h3>
-            <p>Price: {product.price}</p>
-            {/* Navigate to product details page */}
+            <p>Price: {product.price}</p>    
             <button onClick={() => navigate(`/product/${product._id}`)}>Shop Now</button>
           </div>
         </div>

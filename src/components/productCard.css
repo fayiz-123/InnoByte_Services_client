@@ -22,11 +22,13 @@
   }
   
   #card .product img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ensure it scales within the container */
+    height: 200px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Crop the image to fit the container */
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
   }
+  
   
   #card .product h3 {
     font-size: 20px;

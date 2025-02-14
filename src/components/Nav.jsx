@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { jwtDecode } from "jwt-decode";  
+import { jwtDecode } from "jwt-decode";
 import "./Nav.css";
 
 function Nav() {
@@ -63,7 +63,7 @@ function Nav() {
               <button onClick={handleLogout} className="logout-btn">Logout</button>
             </div>
           ) : (
-            <Link to="/login" className="login-btn">Login</Link>
+            <ul className="nav-links"><li> <Link to="/login" className="login-btn">Login</Link></li></ul>
           )}
         </div>
       </nav>

@@ -37,10 +37,9 @@ function Cart() {
   }, [userToken]);
 
   const handleQuantityChange = async (productId, action) => {
-    if (isProcessing) return; // Prevent multiple clicks while request is in progress
+    if (isProcessing) return;
     setIsProcessing(true);
 
-    // Optimistically update the cart UI
     const updatedCartItems = cartItems.map((item) => {
       if (item.productId._id === productId) {
         if (action === 'increment') {
@@ -48,14 +47,13 @@ function Cart() {
         } else if (action === 'decrement') {
           item.quantity -= 1;
           if (item.quantity <= 0) {
-            item.quantity = 0; // Prevent negative quantities
+            item.quantity = 0; 
           }
         }
       }
       return item;
     });
 
-    // Update state immediately with optimistic data
     setCartItems(updatedCartItems);
 
     try {
@@ -71,12 +69,12 @@ function Cart() {
     } catch (err) {
       setError(err.response?.data?.message || 'Error updating cart');
     } finally {
-      setIsProcessing(false); // Enable buttons after request finishes
+      setIsProcessing(false); 
     }
   };
 
   const handleRemoveItem = async (productId) => {
-    if (isProcessing) return; // Prevent multiple clicks while request is in progress
+    if (isProcessing) return; 
     setIsProcessing(true);
 
     try {
@@ -135,19 +133,19 @@ function Cart() {
                   <div className="quantity-controls">
                     <button
                       onClick={() => handleQuantityChange(item.productId._id, 'decrement')}
-                      disabled={isProcessing || item.quantity === 0} // Disable button if quantity is zero
+                      disabled={isProcessing || item.quantity === 0} 
                     >
                       -
                     </button>
                     <button
                       onClick={() => handleQuantityChange(item.productId._id, 'increment')}
-                      disabled={isProcessing} // Disable button while processing
+                      disabled={isProcessing} 
                     >
                       +
                     </button>
                     <button
-                      onClick={() => handleRemoveItem(item.productId._id)} // Remove item
-                      disabled={isProcessing} // Disable button while processing
+                      onClick={() => handleRemoveItem(item.productId._id)} 
+                      disabled={isProcessing} 
                       className="remove-item-btn"
                     >
                       Remove

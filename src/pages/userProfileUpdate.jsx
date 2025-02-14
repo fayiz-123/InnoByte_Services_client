@@ -23,10 +23,10 @@ function UpdateProfile() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
+  const userId = localStorage.getItem('userId'); 
   let id;
   useEffect(() => {
-    // Fetch the user's existing profile when the component loads
+    
     const fetchProfile = async () => {
       try {
         const tokenn = localStorage.getItem("authToken")
@@ -89,7 +89,7 @@ function UpdateProfile() {
         }
       );
       setMessage(response.data.message);
-      navigate('/profile');  // Redirect to the profile page after successful update
+      navigate('/profile');  
     } catch (error) {
       setMessage(error.response?.data?.message || 'Something went wrong');
     } finally {

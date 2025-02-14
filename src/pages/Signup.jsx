@@ -48,11 +48,11 @@ function Signup() {
         username: formData.username,
         email: formData.email,
         password: formData.password,
-        address: formData.address,  // Include the address data
+        address: formData.address,  
       });
 
       if (response.data.success) {
-        navigate('/login'); // Redirect to login page after successful signup
+        navigate('/login'); 
       } else {
         setMessage(response.data.message);
       }

@@ -9,7 +9,7 @@ function OrderDetails() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { orderId } = useParams(); // Get orderId from the URL
+  const { orderId } = useParams(); 
 
   useEffect(() => {
     const fetchOrderDetails = async () => {

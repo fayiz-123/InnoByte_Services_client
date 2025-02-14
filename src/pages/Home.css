@@ -10,7 +10,7 @@ body {
         justify-content: center;
         margin: 0 auto; 
         padding: 10px; 
-        margin-bottom: -110px;
+        margin-bottom: -50px;
 }
 
 /* Header */
@@ -47,3 +47,29 @@ body {
     color: #777;
 }
 
+/* Center the Search Bar & Add Proper Spacing */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding-top: 10px; /* Adjust spacing from heading */
+}
+
+/* Styled Search Bar */
+.search-bar {
+    width: 300px;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* Search Bar Hover & Focus Effects */
+.search-bar:hover,
+.search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./AdminDashboard.css"; // Add your CSS here
+import "./AdminDashboard.css"; 
 
 const AdminDashboard = () => {
   const handleLogout = () => {

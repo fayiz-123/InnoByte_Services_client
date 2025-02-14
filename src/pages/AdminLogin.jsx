@@ -20,8 +20,8 @@ function AdminLogin() {
         const response = await axios.post("http://localhost:3000/admin/adminLogin", formData);
         
         if (response.data.success) {
-            localStorage.setItem("adminToken", response.data.token); // Store token
-            navigate("/admindash"); // Redirect to dashboard
+            localStorage.setItem("adminToken", response.data.token); 
+            navigate('/admindash')
         } else {
             setError(response.data.message || "Invalid credentials");
         }

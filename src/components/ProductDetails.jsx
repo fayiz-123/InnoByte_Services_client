@@ -37,15 +37,12 @@ const ProductDetails = () => {
       setAddToCartError("No product details available.");
       return;
     }
-
     try {
-      // Assuming you have some authentication token for the logged-in user
       const token = localStorage.getItem('authToken');
       if (!token) {
         setAddToCartError("Please log in to add items to the cart.");
         return;
       }
-
       const response = await axios.post(
         'http://localhost:3000/cart/addToCart',
         { productId: product._id, quantity: 1 },
@@ -72,19 +69,15 @@ const ProductDetails = () => {
         ) : error ? (
           <p className="error-text">{error}</p>
         ) : product ? (
-          <div className="product-container">
-            {/* Product Image Section */}
+          <div className="product-container"> 
             <div className="product-image">
               <img src={`http://localhost:3000/uploads/${product.image}`} alt={product.name} />
-            </div>
-
-            {/* Product Details Section */}
+            </div> 
             <div className="product-info">
               <h1>{product.name}</h1>
               <p>{product.description}</p>
               <h3 className="price">Price: ${product.price}</h3>
-
-              {/* Add to Cart Button */}
+              <h4 className='stock'>Stock: {product.stock} left</h4>
               <button className="add-to-cart" onClick={handleAddToCart}>
                 Add to Cart
               </button>

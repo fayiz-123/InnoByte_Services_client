@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import ProductCard from '../components/productCard';
+import ProductCard from '../components/ProductCard';
 import Nav from '../components/Nav';
 import Foot from '../components/Foot';
 import axios from 'axios';
@@ -9,12 +9,13 @@ function Home() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await axios.get('http://localhost:3000/products/allProducts');
-                setProducts(response.data.allProduct); // Accessing the correct key
+                setProducts(response.data.allProduct);
             } catch (error) {
                 setError("Failed to load products. Please try again.");
                 console.error(error);
@@ -26,6 +27,11 @@ function Home() {
         fetchProducts();
     }, []);
 
+    // Filter products based on search query
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
         <>
             <Nav />
@@ -36,6 +42,17 @@ function Home() {
                         <p>Your favorite online store for amazing deals.</p>
                     </section>
 
+                    {/* Search Bar */}
+                    <div className="search-container">
+                        <input
+                            type="text"
+                            className="search-bar"
+                            placeholder="🔍 Search products..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                    </div>
+
                     <h2><u>Featured Products</u></h2>
 
                     {loading ? (
@@ -44,12 +61,12 @@ function Home() {
                         <p style={{ color: "red" }}>{error}</p>
                     ) : (
                         <div className='card-container'>
-                            {products.length > 0 ? (
-                                products.map((product) => (
+                            {filteredProducts.length > 0 ? (
+                                filteredProducts.map((product) => (
                                     <ProductCard key={product._id} product={product} />
                                 ))
                             ) : (
-                                <p>No products available.</p>
+                                <p>No products found.</p>
                             )}
                         </div>
                     )}

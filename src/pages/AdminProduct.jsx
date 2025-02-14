@@ -10,7 +10,7 @@ const AdminProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/products/allProducts", {
+        const response = await axios.get("http://localhost:3000/admin/products", {
           headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
         });
 
@@ -32,14 +32,14 @@ const AdminProduct = () => {
     };
 
     fetchProducts();
-  }, []); // Empty dependency array to fetch only once when component mounts
+  }, []); 
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/products/deleteProduct/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
       });
-      setProducts(products.filter((product) => product._id !== id)); // Remove deleted product from state
+      setProducts(products.filter((product) => product._id !== id)); 
     } catch (error) {
       setError("Error deleting product.");
       console.error("Error deleting product:", error);
@@ -49,7 +49,7 @@ const AdminProduct = () => {
   return (
     <div className="product-list-container">
       <h2>Product List</h2>
-      {error && <p className="error-message">{error}</p>} {/* Show error message */}
+      {error && <p className="error-message">{error}</p>} 
       <Link to="/adminAddProduct" className="add-product-link">Add New Product</Link>
       <ul>
         {Array.isArray(products) && products.length > 0 ? (
@@ -65,7 +65,7 @@ const AdminProduct = () => {
             </li>
           ))
         ) : (
-          <p>No products available.</p> // If products is not an array or is empty
+          <p>No products available.</p> 
         )}
       </ul>
     </div>

@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./AdminAddProduct.css"; // Add your custom styles
+import "./AdminAddProduct.css";
 
 const AdminAddProduct = () => {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     price: "",
-    stock:"",
+    stock: "",
     image: null,
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  // Handle input field changes
+
   const handleChange = (e) => {
     if (e.target.name === "image") {
       setFormData({ ...formData, [e.target.name]: e.target.files[0] });
@@ -24,14 +24,14 @@ const AdminAddProduct = () => {
     }
   };
 
-  // Handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
 
-    // Validation: Ensure all fields are filled
-    if (!formData.name || !formData.description || !formData.price || !formData.stock ||!formData.image) {
+
+    if (!formData.name || !formData.description || !formData.price || !formData.stock || !formData.image) {
       setError("All fields are required.");
       return;
     }
@@ -44,21 +44,21 @@ const AdminAddProduct = () => {
     productFormData.append("image", formData.image);
 
     try {
-      // Send POST request to the backend
+
       const response = await axios.post(
         "http://localhost:3000/products/addProducts",
         productFormData,
         {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("adminToken")}`,
-            "Content-Type": "multipart/form-data", // Required for file uploads
+            "Content-Type": "multipart/form-data",
           },
         }
       );
 
       if (response.data.success) {
         setSuccess("Product added successfully!");
-        setTimeout(navigate("/adminProducts"),5000); // Redirect to the product list page
+        setTimeout(navigate("/adminProducts"), 5000);
       } else {
         setError(response.data.message || "Failed to add product.");
       }
