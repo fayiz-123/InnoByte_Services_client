@@ -103,6 +103,7 @@ function UpdateProfile() {
     <div id='profile'>
     <div className="update-profile-container">
       <h2>Update Profile</h2>
+      {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Username</label>
@@ -175,7 +176,7 @@ function UpdateProfile() {
           {loading ? 'Updating...' : 'Update Profile'}
         </button>
       </form>
-      {message && <p>{message}</p>}
+      
     </div>
     </div>
     <Foot/>
