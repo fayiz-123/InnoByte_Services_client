@@ -52,6 +52,11 @@ function Nav() {
           </li>
           <li>
             <div className="cart">
+              <Link to="/wishlist">WishList ❤️</Link>
+            </div>
+          </li>
+          <li>
+            <div className="cart">
               <Link to="/cart">🛒 Cart</Link>
             </div>
           </li>

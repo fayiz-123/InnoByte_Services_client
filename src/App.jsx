@@ -13,6 +13,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import AdminProduct from './pages/AdminProduct';
 import AdminAddProduct from './pages/AdminAddProduct';
 import AdminEditProduct from './pages/AdminEditProducts';
+import WishList from './pages/WishList';
 
 
 
@@ -32,6 +33,7 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/cart" element={<Cart/>} />
+      <Route path="/wishlist" element={<WishList/>} />
       <Route path="/product/:id" element={<ProductDetails />}/>
       <Route path="/checkout" element={<Checkout/>} />
       <Route path="/profile" element={<UserProfileUpdate/>} />
@@ -42,6 +44,7 @@ function App() {
       <Route path="/adminProducts" element={<AdminProduct />} />
       <Route path="/adminAddProduct" element={<AdminAddProduct/>} />
       <Route path="/adminEditProduct/:id" element={<AdminEditProduct/>} />
+     
 
 
 
