@@ -6,7 +6,7 @@ import Cart from './pages/Cart';
 import ProductDetails from './components/ProductDetails';
 import Checkout from './pages/Checkout';
 import UserProfileUpdate from './pages/userProfileUpdate';
-import OrderHistory from './pages/orderHistory';
+import OrderHistory from './pages/OrderHistory'
 import OrderDetails from './pages/OrderDetails';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
