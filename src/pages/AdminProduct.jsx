@@ -61,6 +61,7 @@ const AdminProduct = () => {
               <div className="actions">
                 <Link to={`/adminEditProduct/${product._id}`} className="edit-btn">Edit</Link>
                 <button onClick={() => handleDelete(product._id)} className="delete-btn">Delete</button>
+                <Link to={`/adminQrCode/${product._id}`}><button className="edit-btn" >QrCode</button></Link>
               </div>
             </li>
           ))

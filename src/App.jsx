@@ -14,6 +14,7 @@ import AdminProduct from './pages/AdminProduct';
 import AdminAddProduct from './pages/AdminAddProduct';
 import AdminEditProduct from './pages/AdminEditProducts';
 import WishList from './pages/WishList';
+import AdminQRCode from './pages/AdminQrCode';
 
 
 
@@ -44,6 +45,7 @@ function App() {
       <Route path="/adminProducts" element={<AdminProduct />} />
       <Route path="/adminAddProduct" element={<AdminAddProduct/>} />
       <Route path="/adminEditProduct/:id" element={<AdminEditProduct/>} />
+      <Route path="/adminQrCode/:id" element={<AdminQRCode/>} />
      
 
 
